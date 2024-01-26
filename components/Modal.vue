@@ -147,7 +147,7 @@ export default {
 }
 
 .modal__action.ready {
-  background-color: lightgreen;
+  background-color: lightgrey;
 }
 
 .modal__action.inProgress {
@@ -155,11 +155,11 @@ export default {
 }
 
 .modal__action.completed {
-  background-color: lightcoral;
+  background-color: lightgreen;
 }
 
 .modal__action.canceled {
-  background-color: lightgrey;
+  background-color: lightcoral;
 }
 
 .modal__action.returned {
@@ -167,6 +167,6 @@ export default {
 }
 
 .modal__action.selected {
-  border: 2px solid black;
+  border: 1px solid black;
 }
 </style>

@@ -35,11 +35,21 @@ export default {
     };
   },
   computed: {
-    ...mapState(["tasks", "searchValue"]),
+    ...mapState(["tasks", "sortedTasks"]),
     filteredTasks() {
-      return this.tasks.filter((task) =>
-        task.title.toLowerCase().includes(this.searchValue.toLowerCase())
-      );
+      if (this.sortedTasks.length === 0) {
+        return this.tasks.filter((task) =>
+          task.title
+            .toLowerCase()
+            .includes(this.$store.state.sort.searchValue.toLowerCase())
+        );
+      } else {
+        return this.sortedTasks.filter((task) =>
+          task.title
+            .toLowerCase()
+            .includes(this.$store.state.sort.searchValue.toLowerCase())
+        );
+      }
     },
   },
   methods: {
