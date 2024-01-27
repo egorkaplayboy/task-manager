@@ -86,7 +86,7 @@ export const mutations = {
         );
         break;
       default:
-        state.tasks = [];
+        state.sortedTasks = [];
         break;
     }
   },

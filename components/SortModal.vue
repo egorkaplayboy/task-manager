@@ -19,7 +19,7 @@
       <div v-for="(filter, index) in getFilters(currentFilter)" :key="index">
         <p
           class="sortModal__filter-item"
-          @click="sortTasks({ currentFilter, filter })"
+          @click="sortedTasks(currentFilter, filter)"
         >
           {{ filter }}
         </p>
@@ -41,6 +41,11 @@ export default {
   },
   methods: {
     ...mapMutations(["sortTasks"]),
+    sortedTasks(currentFilter, filter) {
+      this.sortTasks({ currentFilter, filter });
+      const { query } = this.$route;
+      this.$router.push({ query: { ...query, filter } });
+    },
     closeModal() {
       this.$emit("closeSortModal");
     },
